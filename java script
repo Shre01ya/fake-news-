@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class FakeNewsDetector {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter news text:");
+        String input = scanner.nextLine().toLowerCase();
+
+        if (input.contains("shocking") || input.contains("miracle") || input.contains("click here")) {
+            System.out.println("Potential fake news detected.");
+        } else {
+            System.out.println("No obvious signs of fake news.");
+        }
+        scanner.close();
+    }
+}

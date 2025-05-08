@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Detector</title>
+</head>
+<body>
+    <h2>Fake News Detector</h2>
+    <textarea id="newsText" rows="6" cols="60" placeholder="Paste news here..."></textarea><br>
+    <button onclick="detectFakeNews()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function detectFakeNews() {
+            const text = document.getElementById("newsText").value.toLowerCase();
+            const suspiciousWords = ["shocking", "miracle", "click here", "secret"];
+            let result = "This news appears legitimate.";
+
+            for (let word of suspiciousWords) {
+                if (text.includes(word)) {
+                    result = "Warning: Potential fake news detected.";
+                    break;
+                }
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>
